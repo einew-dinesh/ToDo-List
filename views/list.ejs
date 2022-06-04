@@ -3,8 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>To Do List</title>
+    <link rel="stylesheet" href="public/css/styles.css">
   </head>
   <body>
-    <h1><%= kindOfDay %></h1>
+    <h1> <%= kindOfDay %> </h1>
+
+    <ul>
+
+ <%   for(var i =0;i<newtasks.length;i++){  %>
+      <li>  <%= newtasks[i] %> </li>
+ <% }%>
+
+    </ul>
+
+    <form  action="/" method="post">
+
+      <input type="text" name="task" placeholder="task">
+      <button type="submit" name="button">Add to List</button>
+
+
+    </form>
   </body>
 </html>
