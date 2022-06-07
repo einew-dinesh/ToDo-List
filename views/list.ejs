@@ -14,12 +14,18 @@
   </div>
   <div class="box">
 
-    <%   for(var i =0;i<newtasks.length;i++){  %>
-    <div class="item">
-      <input type="checkbox">
-      <p> <%= newtasks[i] %> </p>
-    </div>
-    <% }%>
+
+
+    <%newtasks.forEach(function(newtask){%>
+      <form class="" action="/delete" method="post">
+
+        <div class="item">
+          <input type="checkbox" name="checkbox" value="<%=newtask._id%>" onChange="this.form.submit()">
+          <input type="hidden" name="typeTask" value="<%=typeList%>">
+          <p> <%= newtask.name %> </p>
+        </div>
+      </form>
+    <%});%>
 
     <form class="item" action="/" method="post">
 
